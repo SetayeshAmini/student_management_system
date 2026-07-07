@@ -22,3 +22,17 @@ class Student:
         else:
             print(f"Error: Email address not valid")
 
+    def enroll_course(self, course_code):
+        if course_code not in self.courses:
+            self.courses.append(course_code)
+            print(f"successfully enrolled in course {course_code}")
+        else:
+            print(f"already enrolled in course {course_code}")
+
+    def display_info(self):
+        print("\n---- Student Information----")
+        print(f"Student ID: {self.student_id}")
+        print(f"Name: {self.name}")
+        print(f"Email: {self.email}")
+        print(f"Enrolled course: {self.courses}")
+        print("--------------------------------")
