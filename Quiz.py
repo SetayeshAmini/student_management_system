@@ -19,4 +19,4 @@ class Quiz(Assesment):
         elif percentage >= 50:
             return "Grade: C"
         else:
-            return "Needs more paractice"
+            return "Needs more practice"
