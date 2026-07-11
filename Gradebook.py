@@ -53,3 +53,24 @@ class Gradebook:
             count = len(student_course_grades)
             return total / count
         return 0
+
+    def get_result(self, average):
+        if average >= self.passing_grade:
+            return "Pass"
+        return "Fail"
+
+    def search_students(self, keyword):
+        found_students = []
+        for student_id, student in self.students.items():
+            if keyword.lower() in student_id.lower() or keyword.lower() in student.name.lower():
+                found_students.append(student)
+        return found_students
+
+    def delete_student(self, student_id):
+        if student_id in self.students:
+            del self.students[student_id]
+            if student_id in self.grades:
+                del self.grades[student_id]
+            print(f"Student {student_id} has successfully deleted.")
+        else:
+            print(f"Error: student with id {student_id} does not exist.")
