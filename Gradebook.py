@@ -189,4 +189,20 @@ class Gradebook:
         self.attendance[student_id][course_code][date] = status
         print(f" '{status}' recorded for {student_id} on {date}. ")
 
+    def view_students(self):
+        if not self.students:
+            print("No students registered yet.")
+            return
+        print("Registered Students")
+        for s_id, s in self.students.items():
+            print(f"ID: {s_id} | Name: {s.name} | Email: {s.email}")
+
+
+    def update_student(self, student_id, new_name=None, new_email=None):
+        if student_id in self.students:
+            if new_name: self.students[student_id].name = new_name
+            if new_email: self.students[student_id].email = new_email
+            print(f"Student {student_id} updated successfully.")
+        else:
+            print("Error: Student not found.")
 
