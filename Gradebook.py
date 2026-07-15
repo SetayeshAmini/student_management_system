@@ -127,7 +127,7 @@ class Gradebook:
             for exam_title, score in assessment.items():
                 assessment = course.find_assessment(exam_title)
                 if assessment:
-                    percentage = assessment.calcute_percentage(score)
+                    percentage = assessment.calculate_percentage(score)
                     max_score = assessment.max_score
                 else:
                     max_score = 100

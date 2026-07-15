@@ -2,7 +2,6 @@ from Student import Student
 from Course import Course
 from Exam import Exam
 from Project import Project
-from Assesment import Assesment
 from Quiz import Quiz
 from Gradebook import Gradebook
 
@@ -121,5 +120,16 @@ def main():
                 keyword = input("Enter Keyword: ").strip()
                 result = manager.search_students(keyword)
                 for s in result: print(f"ID: {s.student_id} | Name: {s.name} | Email: {s.email}")
+            elif sub_choice == "5":
+                s_id = input("Enter Student ID: ").strip()
+                s_name = input("Enter New Name: ").strip()
+                email = input("Enter New Email: ").strip()
+                manager.update_student(s_id, s_name if s_name else None, email if email else None)
+            elif sub_choice == "6":
+                s_id = input("Enter Student ID: ").strip()
+                manager.delete_student(s_id)
+            else:
+                print("Error: Invalid choice.")
 
-main()
+if __name__ == "__main__":
+    main()
