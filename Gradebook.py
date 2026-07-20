@@ -58,7 +58,7 @@ class Gradebook:
                 assesment = course.find_assessment(exam_title) if course else None
 
                 if assesment:
-                    total_average += assesment.calculate_average(score)
+                    total_average += assesment.calculate_percentage(score)
                 else:
                     total_average += (score / 100) * 100
                 count += 1
@@ -148,7 +148,7 @@ class Gradebook:
     def show_dashboard(self):
         print("==== Dashboard ====")
         print(f"Total Students Registered: {len(self.students)}")
-        print("Total Courses: {len(self.courses)}")
+        print(f"Total Courses: {len(self.courses)}")
         total_assessments = 0
         for course in self.courses.values():
             total_assessments += len(course.assessments)

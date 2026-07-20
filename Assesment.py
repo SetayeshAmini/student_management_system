@@ -8,7 +8,7 @@ class Assesment:
             return 0.0
         return (score / self.max_score) * 100
 
-    def grade_msssage(self, score):
+    def grade_message(self, score):
         percentage = self.calculate_percentage(score)
         if percentage >= 50:
             return f"Exam passed! result for {self.title} is {percentage:.1f}%"

@@ -117,7 +117,7 @@ def main():
             elif sub_choice == "3":
                 manager.show_dashboard()
             elif sub_choice == "4":
-                keyword = input("Enter Keyword: ").strip()
+                keyword = input("Enter Student ID: ").strip()
                 result = manager.search_students(keyword)
                 for s in result: print(f"ID: {s.student_id} | Name: {s.name} | Email: {s.email}")
             elif sub_choice == "5":

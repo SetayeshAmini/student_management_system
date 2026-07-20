@@ -7,7 +7,7 @@ class Project(Assesment):
     def display_info(self):
         print(f"Project: {self.title} - Max Score: {self.max_score}")
 
-    def grade_msssage(self, score):
+    def grade_message(self, score):
         percentage = self.calculate_percentage(score)
         if percentage >= 95:
             return "Grade: A+"
